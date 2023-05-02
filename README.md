@@ -4,10 +4,8 @@
 
 The Final Test Automation is a project for the software test automation course, which involves designing test cases for key functionalities, creating 5 automated tests using Selenium WebDriver and TestNG, applying the Page Object pattern, and generating reports with Allure. The test suite is designed to explore and validate the functionalities of the online clothing store at http://magento-demo.lexiconn.com.
 
-## 🧠 Mindmap Overview
-![Madison Island MindMap](https://user-images.githubusercontent.com/106263642/235736608-9601c393-abb6-4aa8-940e-603008706546.png)
-
 ## 📚 Table of Contents
+- [🧠 Mindmap Overview](https://github.com/florencialecha/madison-island-qa-automation-java-selenium/blob/main/README.md#-features)
 - 🌟 Features
 - 🎯 Overview
 - 💻 Technologies
@@ -16,6 +14,9 @@ The Final Test Automation is a project for the software test automation course, 
 - 📊 Allure Reports
 - 📃 Test Scenarios
 - 👩‍💻 About the Developer
+
+## 🧠 Mindmap Overview
+![Madison Island MindMap](https://user-images.githubusercontent.com/106263642/235736608-9601c393-abb6-4aa8-940e-603008706546.png)
 
 ## 🌟 Features
 - Exploration session to understand the domain and functionalities
