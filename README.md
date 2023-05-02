@@ -38,7 +38,7 @@ Feel free to explore the repository to gain a deeper understanding of the test a
 - TestNG
 - Maven
 - Allure Reports
-- GitLab
+- GitHub
 
 ## ⚙️ Setup
 - Clone the repository
