@@ -1,4 +1,4 @@
-# 🤖Final Test Java - Selenium Course from Abstracta | Test Automation for Online Clothing Store
+# 🚀 Java-Selenium Course Final Project - Abstracta | Test Automation for Online Clothing Store
 
 ⚠️ This repository contains information about the test automation for an online clothing store.
 
