@@ -5,15 +5,15 @@
 The Final Test Automation is a project for the software test automation course, which involves designing test cases for key functionalities, creating 5 automated tests using Selenium WebDriver and TestNG, applying the Page Object pattern, and generating reports with Allure. The test suite is designed to explore and validate the functionalities of the online clothing store at http://magento-demo.lexiconn.com.
 
 ## 📚 Table of Contents
-- [🧠 Mindmap Overview](https://github.com/florencialecha/madison-island-qa-automation-java-selenium/blob/main/README.md#-features)
-- 🌟 Features
-- 🎯 Overview
-- 💻 Technologies
-- ⚙️ Setup
-- 🚀 Usage
-- 📊 Allure Reports
-- 📃 Test Scenarios
-- 👩‍💻 About the Developer
+- [🧠 Mindmap Overview](https://github.com/florencialecha/madison-island-qa-automation-java-selenium/blob/main/README.md#-mindmap-overview)
+- [🌟 Features](https://github.com/florencialecha/madison-island-qa-automation-java-selenium/blob/main/README.md#-features)
+- [🎯 Overview](https://github.com/florencialecha/madison-island-qa-automation-java-selenium/blob/main/README.md#-overview)
+- [💻 Technologies](https://github.com/florencialecha/madison-island-qa-automation-java-selenium/blob/main/README.md#-technologies)
+- [⚙️ Setup](https://github.com/florencialecha/madison-island-qa-automation-java-selenium/blob/main/README.md#%EF%B8%8F-setup)
+- [🚀 Usage](https://github.com/florencialecha/madison-island-qa-automation-java-selenium/blob/main/README.md#-usage)
+- [📊 Allure Reports](https://github.com/florencialecha/madison-island-qa-automation-java-selenium/blob/main/README.md#-allure-reports)
+- [📃 Test Scenarios](https://github.com/florencialecha/madison-island-qa-automation-java-selenium/blob/main/README.md#-test-scenarios)
+- [👩‍💻 About the Developer](https://github.com/florencialecha/madison-island-qa-automation-java-selenium/blob/main/README.md#-about-the-developer)
 
 ## 🧠 Mindmap Overview
 ![Madison Island MindMap](https://user-images.githubusercontent.com/106263642/235736608-9601c393-abb6-4aa8-940e-603008706546.png)
