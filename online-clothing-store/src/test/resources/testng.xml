@@ -1,0 +1,33 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="SearchClothesSuite">
+    <test name="SuccessfulKeywordSearchTest">
+        <classes>
+            <class name="com.onlineclothingstore.scripts.search_clothes.SuccessfulKeywordSearchTest" />
+        </classes>
+    </test>
+    <test name="FilterSearchTest">
+        <classes>
+            <class name="com.onlineclothingstore.scripts.search_clothes.FilterSearchTest" />
+        </classes>
+    </test>
+    <test name="CategoryNavigationTest">
+        <classes>
+            <class name="com.onlineclothingstore.scripts.search_clothes.CategoryNavigationTest" />
+        </classes>
+    </test>
+    <test name="NoResultsSearchTest">
+        <classes>
+            <class name="com.onlineclothingstore.scripts.search_clothes.NoResultsSearchTest" />
+        </classes>
+    </test>
+    <test name="ProductDetailsFromSearchTest">
+        <classes>
+            <class name="com.onlineclothingstore.scripts.search_clothes.ProductDetailsFromSearchTest" />
+        </classes>
+    </test>
+    <test name="SpecialCharSearchTest">
+        <classes>
+            <class name="com.onlineclothingstore.scripts.search_clothes.SpecialCharSearchTest" />
+        </classes>
+    </test>
+</suite>
