@@ -8,7 +8,6 @@ import org.openqa.selenium.support.PageFactory;
 import java.util.List;
 
 public class SearchPage {
-
     private static WebDriver driver;
 
     @FindBy(css = ".products-grid > li")

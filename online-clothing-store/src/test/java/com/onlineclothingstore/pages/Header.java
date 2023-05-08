@@ -7,9 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import static org.openqa.selenium.Keys.ENTER;
 public class Header {
-
     private static WebDriver driver;
-
     //todo: check if selector name = q is better, it's more specific but less readable
     @FindBy(css = "#search_mini_form input")
     private WebElement searchBar;
