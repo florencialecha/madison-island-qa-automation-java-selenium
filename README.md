@@ -16,7 +16,7 @@ The Final Test Automation is a project for the software test automation course, 
 - [👩‍💻 About the Developer](https://github.com/florencialecha/madison-island-qa-automation-java-selenium/blob/main/README.md#-about-the-developer)
 
 ## 🧠 Mindmap Overview
-![Madison Island MindMap](https://user-images.githubusercontent.com/106263642/235736608-9601c393-abb6-4aa8-940e-603008706546.png)
+![MadisonIslandMindMap - v2](https://user-images.githubusercontent.com/106263642/236925054-a8a6743b-2bdd-4721-8a64-c718839c8b3a.png)
 
 ## 🌟 Features
 - Exploration session to understand the domain and functionalities
