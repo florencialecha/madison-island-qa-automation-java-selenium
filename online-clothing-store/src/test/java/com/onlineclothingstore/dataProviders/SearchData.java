@@ -3,12 +3,12 @@ package com.onlineclothingstore.dataProviders;
 import org.testng.annotations.DataProvider;
 
 public class SearchData {
-    @DataProvider(name = "searchKeywords")
-    public static Object[][] searchKeywords() {
+    @DataProvider(name = "searchKeywordsAndFilters")
+    public static Object[][] createSearchKeywordsAndFilters() {
         return new Object[][] {
-                {"pants"},
-                {"shirt"},
-                {"shoes"},
+                {"pants", "Women"},
+                {"shirt", "Men"},
+                {"shoes", "Black"},
         };
     }
 }

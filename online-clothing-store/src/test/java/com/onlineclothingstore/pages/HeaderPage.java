@@ -17,9 +17,9 @@ public class HeaderPage {
         PageFactory.initElements(driver, this);
     }
 
-    public SearchPage searchFor(String keyword) {
+    public CatalogSearchPage searchFor(String keyword) {
         searchBar.sendKeys(keyword);
         searchBar.sendKeys(ENTER);
-        return new SearchPage(driver);
+        return new CatalogSearchPage(driver);
     }
 }

@@ -2,36 +2,34 @@ package com.onlineclothingstore.scripts.search_clothes;
 
 import com.onlineclothingstore.dataProviders.SearchData;
 import com.onlineclothingstore.pages.HeaderPage;
-import com.onlineclothingstore.pages.SearchPage;
-import com.onlineclothingstore.pages.ShopByPage;
+import com.onlineclothingstore.pages.CatalogSearchPage;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class FilterSearchTest extends BaseTest {
 
-    @Test(dataProvider = "searchKeywords", dataProviderClass = SearchData.class)
-    public void handle(String keyword) {
+    @Test(dataProvider = "searchKeywordsAndFilters", dataProviderClass = SearchData.class)
+    public void handle(String keyword,  String filter) {
 
-        // todo: improve
-        // - if succefullKeywordSearchTest is true => check if filterSearchTest works
-
-        //succefullKeywordSearchTest
+        // improve: if succefullKeywordSearchTest is true => check if filterSearchTest works
         driver.get("http://magento-demo.lexiconn.com");
         HeaderPage headerPage = new HeaderPage(driver);
 
-        SearchPage searchPage = headerPage.searchFor(keyword);
+        // Perform a search using the provided keyword
+        CatalogSearchPage catalogSearchPage = headerPage.searchFor(keyword);
+        int countSearchForKeywordResults = catalogSearchPage.getNumberOfResults();
+        System.out.println("Number of results for keyword search: " + countSearchForKeywordResults);
 
-        ShopByPage shopByPage = searchPage.applyFilter(filter);
-        int numberOfResults = searchPage.getNumberOfResults();
-        System.out.println("Number of results: " + numberOfResults);
+        // Apply the provided filter and get the number of filtered results
+        if (countSearchForKeywordResults > 0) {
+            catalogSearchPage.applyFilter(filter);
+            int countApplyFilterResults = catalogSearchPage.getNumberOfFilteredResults();
+            System.out.println("Number of results for filter search: " + countApplyFilterResults);
 
-        //filterSearchTest
-        if (numberOfResults > 0) {
-            ShopByPage shopByPage = new ShopByPage(driver);
-            // for each filterAvailable, apply filter and check if number of results is > 0
-
-            int numberOfResults = searchPage.getNumberOfResults();
+            Assert.assertTrue(catalogSearchPage.isFilterApplied(filter), "Filter not applied");
+            Assert.assertTrue(countApplyFilterResults <= countSearchForKeywordResults, "Filtered results exceed the initial search results");
+        } else {
+            Assert.fail("No results found for the given keyword");
         }
-
-
     }
 }
