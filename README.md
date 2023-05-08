@@ -55,18 +55,21 @@ Feel free to explore the repository to gain a deeper understanding of the test a
 After running the tests, view the Allure reports generated to analyze the test results and identify any issues or improvements needed.
 
 ## 📃 Test Scenarios
-1. **Browse and search for available clothing items:** This test verifies that users can easily search for and find the products they want. Testing this functionality ensures that users can effectively navigate the store's catalog. The test should cover various search criteria, filters, and navigation through product categories.
-2. **Add items to the shopping cart and proceed to checkout:** This test is critical for the online store's operation, as it allows users to add products to their cart and complete the purchase. Ensuring that this process runs smoothly is essential for maintaining customer satisfaction and sales. The test should cover adding different products to the cart, updating the cart, and going through the entire checkout process.
-3. **Apply discounts and promotions during checkout:**  This test ensures that discounts and promotions are correctly applied at the time of payment, making sure customers receive the expected offers and that the billing system is accurate. The test should cover the application of various discount codes, promotional offers, and their validation during the checkout process.
-4. **User registration and authentication:** This test ensures that users can successfully create accounts and log into them. Verifying that authentication works properly is crucial for the user experience and the platform's security. The test should cover the registration process, form validation, and login functionality.
-5. **Manage user account settings and order history:** This test verifies that users can manage their accounts, such as changing passwords, updating contact information, and reviewing their order history. Testing this functionality ensures that the online store maintains user data security and privacy while offering a good customer experience. The test should cover different account management actions and the ability to view and interact with order history.
+- **Search for Available Clothing Items:** This test verifies that users can easily search for and find the products they want using various search criteria, filters, and navigation through product categories.
+- **Filtered Search Test:** This test ensures that users can apply different combinations of filters to search results (e.g., price range, color, size) and obtain results that match both the search keyword and the applied filter.
+- **Category Navigation Test:** This test checks that users can navigate through product categories and subcategories from the menu, displaying the products within the selected category and subcategory.
+-  **No Results Search Test:** This test serves as a negative test case, verifying that the search functionality returns no results and displays an appropriate message when the user inputs an invalid or non-existent search keyword.
+- **Product Details from Search Test:** This test ensures that users can access product details from search results, displaying relevant information such as product images, description, price, and available sizes/colors.
 
 The criteria for choosing these test scenarios were based on the following factors:
-- High impact on the user experience
-- Critical functionalities for the online store's operation
-- Ensuring correct price calculation and payment processing
-- Verification of proper application of discounts and promotions
-- Maintaining the security and privacy of user data
+- High impact on the user experience.
+- Critical functionalities for the online store's operation.
+- Ensuring the search functionality works with various inputs and filters.
+- Proper handling of negative test cases and special characters.
+- Ease of navigation through product categories and access to product details.
+- Frequent execution requirement, which reduces costs associated with manual testing.
+
+By focusing on these test cases, the testing suite ensures that users can effectively navigate the store's catalog, find desired products, and access relevant product information. Additionally, these tests help to verify the robustness and reliability of the search functionality. Automating these tests, which need to be executed frequently, reduces the time and resources spent on manual testing, leading to more efficient testing processes and cost savings.
 
 ## 👩‍💻 About the Developer
 Hi, I'm [Florencia](https://www.linkedin.com/in/florencialecha/), the developer of this project. I'm a software engineer with a strong focus on test automation and quality assurance. My passion lies in creating clean, maintainable, and efficient test suites that ensure the reliability and performance of software systems. I continuously strive to enhance my skills and deliver high-quality solutions that meet both business and user needs.
