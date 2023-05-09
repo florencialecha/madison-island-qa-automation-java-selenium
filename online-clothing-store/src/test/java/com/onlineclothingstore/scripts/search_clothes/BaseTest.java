@@ -3,15 +3,15 @@ package com.onlineclothingstore.scripts.search_clothes;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.testng.annotations.AfterSuite;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 
 public class BaseTest {
     protected WebDriver driver;
 
-    @BeforeTest
+    @BeforeMethod
     public void setUp() {
         System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
@@ -19,10 +19,9 @@ public class BaseTest {
         driver = new ChromeDriver(options);
     }
 
-    @AfterTest
+    @AfterMethod
     public void tearDown() {
         driver.close();
-        System.exit(0);
     }
 
 }

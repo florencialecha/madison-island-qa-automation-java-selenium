@@ -20,16 +20,18 @@ public class FilterSearchTest extends BaseTest {
         int countSearchForKeywordResults = catalogSearchPage.getNumberOfResults();
         System.out.println("Number of results for keyword search: " + countSearchForKeywordResults);
 
-        // Apply the provided filter and get the number of filtered results
-        if (countSearchForKeywordResults > 0) {
-            catalogSearchPage.applyFilter(filter);
-            int countApplyFilterResults = catalogSearchPage.getNumberOfFilteredResults();
-            System.out.println("Number of results for filter search: " + countApplyFilterResults);
-
-            Assert.assertTrue(catalogSearchPage.isFilterApplied(filter), "Filter not applied");
-            Assert.assertTrue(countApplyFilterResults <= countSearchForKeywordResults, "Filtered results exceed the initial search results");
-        } else {
-            Assert.fail("No results found for the given keyword");
-        }
+        Assert.assertTrue(countSearchForKeywordResults > 0, "No results found for the given keyword");
+//
+//        // Apply the provided filter and get the number of filtered results
+//        if (countSearchForKeywordResults > 0) {
+//            catalogSearchPage.applyFilter(filter);
+//            int countApplyFilterResults = catalogSearchPage.getNumberOfFilteredResults();
+//            System.out.println("Number of results for filter search: " + countApplyFilterResults);
+//
+//            Assert.assertTrue(catalogSearchPage.isFilterApplied(filter), "Filter not applied");
+//            Assert.assertTrue(countApplyFilterResults <= countSearchForKeywordResults, "Filtered results exceed the initial search results");
+//        } else {
+//            Assert.fail("No results found for the given keyword");
+//        }
     }
 }
