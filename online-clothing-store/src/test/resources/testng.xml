@@ -1,33 +1,25 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="SearchClothesSuite">
-    <test name="SuccessfulKeywordSearchTest">
+<suite name="SearchClothesTestsSuite">
+    <test name="ProductSearchTests">
         <classes>
-            <class name="com.onlineclothingstore.scripts.search_clothes.SuccessfulKeywordSearchTest" />
+            <class name="com.onlineclothingstore.scripts.searchClothesTestSuite.ShouldReturnResultsWhenSearchTermMatchesTest" />
+            <class name="com.onlineclothingstore.scripts.searchClothesTestSuite.ShouldReturnNoResultsWhenSearchTermNotFoundTest" />
+            <class name="com.onlineclothingstore.scripts.searchClothesTestSuite.ShouldHandleSpecialCharactersInSearchTermTest" />
         </classes>
     </test>
     <test name="FilterSearchTest">
         <classes>
-            <class name="com.onlineclothingstore.scripts.search_clothes.FilterSearchTest" />
+            <class name="com.onlineclothingstore.scripts.searchClothesTestSuite.ShouldFilterSearchResultsTest" />
         </classes>
     </test>
     <test name="CategoryNavigationTest">
         <classes>
-            <class name="com.onlineclothingstore.scripts.search_clothes.CategoryNavigationTest" />
-        </classes>
-    </test>
-    <test name="NoResultsSearchTest">
-        <classes>
-            <class name="com.onlineclothingstore.scripts.search_clothes.NoResultsSearchTest" />
+            <class name="com.onlineclothingstore.scripts.searchClothesTestSuite.ShouldNavigateToCategoryTest" />
         </classes>
     </test>
     <test name="ProductDetailsFromSearchTest">
         <classes>
-            <class name="com.onlineclothingstore.scripts.search_clothes.ProductDetailsFromSearchTest" />
-        </classes>
-    </test>
-    <test name="SpecialCharSearchTest">
-        <classes>
-            <class name="com.onlineclothingstore.scripts.search_clothes.SpecialCharSearchTest" />
+            <class name="com.onlineclothingstore.scripts.searchClothesTestSuite.ShouldDisplayProductDetailsFromSearchResultsTest" />
         </classes>
     </test>
 </suite>

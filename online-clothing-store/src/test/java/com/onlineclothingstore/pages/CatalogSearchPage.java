@@ -11,9 +11,9 @@ public class CatalogSearchPage {
     private static WebDriver driver;
     @FindBy(css = ".products-grid > li")
     private List<WebElement> searchResultsItems;
-    @FindBy(css = "#narrow-by-list > li")
+    @FindBy(css = "#narrow-by-list li a")
     private List<WebElement> filterOptions;
-    @FindBy(css = ".currently > li")
+    @FindBy(css = ".currently .value")
     private List<WebElement> currentFilters;
 
     public CatalogSearchPage(WebDriver driver) {
@@ -26,23 +26,25 @@ public class CatalogSearchPage {
     }
 
     public CatalogSearchPage applyFilter(String filter) {
+        // 1 - find the filter on the filterOptions list
+        WebElement filterElement = findFilterElementByText(filter);
+        // 2 - click on the filter
+        if (filterElement != null) {
+            filterElement.click();
+            System.out.println("Filter '" + filter + "' applied");
+        } else {
+            System.out.println("Filter '" + filter + " not found in the list of filters");
+        }
+        return new CatalogSearchPage(driver);
+    }
 
-        WebElement filterToApply = null;
-
-        for (WebElement option : filterOptions) {
-            if (option.getText().contains(filter)) {
-                filterToApply = option;
-                break;
+    private WebElement findFilterElementByText(String filterText) {
+        for (WebElement filterOption : filterOptions) {
+            if (filterOption.getText().contains(filterText)) {
+                return filterOption;
             }
         }
-
-        if (filterToApply != null) {
-            filterToApply.click();
-        } else {
-            System.out.println("Filter not found: " + filter);
-        }
-
-        return this;
+        return null;
     }
 
     public int getNumberOfFilteredResults() {
@@ -59,3 +61,4 @@ public class CatalogSearchPage {
         return false;
     }
 }
+

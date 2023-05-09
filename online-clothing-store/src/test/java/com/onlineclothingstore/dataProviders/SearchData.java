@@ -6,9 +6,9 @@ public class SearchData {
     @DataProvider(name = "searchKeywordsAndFilters")
     public static Object[][] createSearchKeywordsAndFilters() {
         return new Object[][] {
-                {"pants", "Women"},
-                {"shirt", "Men"},
-                {"shoes", "Black"},
+                {"shirt cotton", "Men"},
+                {"pant for wearing", "Accessories"},
+                {"shoes 1", "Home & Decor"},
         };
     }
 }
