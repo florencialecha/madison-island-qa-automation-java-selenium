@@ -11,12 +11,21 @@ public class ShouldReturnResultsWhenSearchTermMatchesTest extends BaseTest {
 
     @Test(groups = "search", dataProvider = "searchKeywordsAndFilters", dataProviderClass = SearchData.class)
     public void handle(String keyword, String filter){
+
         driver.get("http://magento-demo.lexiconn.com");
         HeaderPage headerPage = new HeaderPage(driver);
         CatalogSearchPage catalogSearchPage = headerPage.searchFor(keyword);
         int numberOfResults = catalogSearchPage.getNumberOfResults();
         System.out.println("Number of results: " + numberOfResults);
         Assert.assertTrue(numberOfResults > 0, "No results found");
+
+        String expectedSearchTitle = "SEARCH RESULTS FOR '" + keyword.toUpperCase() + "'";
+        String actualSearchTitle = catalogSearchPage.getSearchTitle();
+        Assert.assertEquals(actualSearchTitle, expectedSearchTitle, "The search title don't match");
+
+        String expectedSearchBreadcrumb = "SEARCH RESULTS FOR: '" + keyword.toUpperCase() + "'";
+        String actualSearchBreadcrumb = catalogSearchPage.getSearchBreadcrumb();
+        Assert.assertEquals(actualSearchBreadcrumb, expectedSearchBreadcrumb, "The search breadcrumb don't match");
     }
 
 }

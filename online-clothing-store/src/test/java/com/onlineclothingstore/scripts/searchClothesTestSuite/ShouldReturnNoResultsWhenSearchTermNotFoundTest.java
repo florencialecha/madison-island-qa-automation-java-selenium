@@ -16,5 +16,17 @@ public class ShouldReturnNoResultsWhenSearchTermNotFoundTest extends BaseTest {
         int numberOfResults = catalogSearchPage.getNumberOfResults();
         System.out.println("Number of results: " + numberOfResults);
         Assert.assertEquals(numberOfResults, 0, "Search should return no results");
+
+        String expectedSearchTitle = "SEARCH RESULTS FOR '" + keyword.toUpperCase() + "'";
+        String actualSearchTitle = catalogSearchPage.getSearchTitle();
+        Assert.assertEquals(actualSearchTitle, expectedSearchTitle, "The search title don't match");
+
+        String expectedSearchBreadcrumb = "SEARCH RESULTS FOR: '" + keyword.toUpperCase() + "'";
+        String actualSearchBreadcrumb = catalogSearchPage.getSearchBreadcrumb();
+        Assert.assertEquals(actualSearchBreadcrumb, expectedSearchBreadcrumb, "The search breadcrumb don't match");
+
+        String expectedNoResultsMessage = "Your search returns no results.";
+        String actualNoResultsMessage = catalogSearchPage.getNoResultsMessage();
+        Assert.assertEquals(actualNoResultsMessage, expectedNoResultsMessage, "The no results message should be displayed");
     }
 }

@@ -16,6 +16,15 @@ public class CatalogSearchPage {
     @FindBy(css = ".currently .value")
     private List<WebElement> currentFilters;
 
+    @FindBy(className = "note-msg")
+    private WebElement noResultsMessage;
+
+    @FindBy(className = "page-title")
+    private WebElement pageTitle;
+
+    @FindBy(className = "search")
+    private WebElement searchRoot;
+
     public CatalogSearchPage(WebDriver driver) {
         CatalogSearchPage.driver = driver;
         PageFactory.initElements(driver, this);
@@ -59,6 +68,18 @@ public class CatalogSearchPage {
             }
         }
         return false;
+    }
+
+    public String getNoResultsMessage() {
+        return noResultsMessage.getText();
+    }
+
+    public String getSearchTitle() {
+        return pageTitle.getText();
+    }
+
+    public String getSearchBreadcrumb() {
+        return searchRoot.getText();
     }
 }
 
