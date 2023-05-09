@@ -11,4 +11,13 @@ public class SearchData {
                 {"shoes 1", "Home & Decor"},
         };
     }
+
+    @DataProvider(name = "searchKeywordsWithNoResults")
+    public static Object[][] createSearchKeywordsWithNoResults() {
+        return new Object[][] {
+                {"Lisa Simpson"},
+                {"Wanda Nara"},
+                {"Paulina Cocina"},
+        };
+    }
 }
