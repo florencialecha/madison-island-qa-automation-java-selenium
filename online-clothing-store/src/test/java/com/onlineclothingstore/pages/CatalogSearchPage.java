@@ -4,26 +4,27 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
 import java.util.List;
+import java.util.Random;
 
 public class CatalogSearchPage {
     private static WebDriver driver;
-    @FindBy(css = ".products-grid > li")
+    @FindBy(css = ".products-grid .product-name")
     private List<WebElement> searchResultsItems;
     @FindBy(css = "#narrow-by-list li a")
     private List<WebElement> filterOptions;
     @FindBy(css = ".currently .value")
     private List<WebElement> currentFilters;
-
     @FindBy(className = "note-msg")
     private WebElement noResultsMessage;
-
     @FindBy(className = "page-title")
     private WebElement pageTitle;
-
     @FindBy(className = "search")
-    private WebElement searchRoot;
+    private WebElement SearchBreadcrumb;
 
     public CatalogSearchPage(WebDriver driver) {
         CatalogSearchPage.driver = driver;
@@ -79,7 +80,22 @@ public class CatalogSearchPage {
     }
 
     public String getSearchBreadcrumb() {
-        return searchRoot.getText();
+        return SearchBreadcrumb.getText();
+    }
+
+    public DetailsProductPage clickOnProductRandom() {
+        Random random = new Random();
+        int randomIndex = random.nextInt(searchResultsItems.size());
+        WebElement randomProduct = searchResultsItems.get(randomIndex);
+        String selectedProductName = randomProduct.getText();
+        System.out.println("Selected product: " + selectedProductName);
+        randomProduct.click();
+        return new DetailsProductPage(driver, selectedProductName);
+    }
+
+    public void waitForSearchResults() {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+        wait.until(ExpectedConditions.visibilityOfAllElements(searchResultsItems));
     }
 }
 
