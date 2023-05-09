@@ -20,7 +20,7 @@ public class ShouldDisplayProductDetailsFromSearchResultsTest extends BaseTest {
 
         DetailsProductPage detailsProductPage = catalogSearchPage.clickOnProductRandom();
         String selectedProductName = detailsProductPage.getSelectedProductName();
-        //detailsProductPage.waitForPageTitle();
+        detailsProductPage.waitForPageTitle();
 
         String expectedPageTitle = detailsProductPage.getProductName();
         String actualPageTitle = selectedProductName;

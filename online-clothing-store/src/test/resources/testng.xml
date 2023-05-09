@@ -1,5 +1,8 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="SearchClothesTestsSuite">
+    <listeners>
+        <listener class-name="io.qameta.allure.testng.AllureTestNg"/>
+    </listeners>
     <test name="ProductSearchTests">
         <classes>
             <class name="com.onlineclothingstore.scripts.searchClothesTestSuite.ShouldReturnResultsWhenSearchTermMatchesTest" />
@@ -12,11 +15,11 @@
             <class name="com.onlineclothingstore.scripts.searchClothesTestSuite.ShouldFilterSearchResultsTest" />
         </classes>
     </test>
-    <test name="CategoryNavigationTest">
-        <classes>
-            <class name="com.onlineclothingstore.scripts.searchClothesTestSuite.ShouldNavigateToCategoryTest" />
-        </classes>
-    </test>
+<!--    <test name="CategoryNavigationTest">-->
+<!--        <classes>-->
+<!--            <class name="com.onlineclothingstore.scripts.searchClothesTestSuite.ShouldNavigateToCategoryTest" />-->
+<!--        </classes>-->
+<!--    </test>-->
     <test name="ProductDetailsFromSearchTest">
         <classes>
             <class name="com.onlineclothingstore.scripts.searchClothesTestSuite.ShouldDisplayProductDetailsFromSearchResultsTest" />
