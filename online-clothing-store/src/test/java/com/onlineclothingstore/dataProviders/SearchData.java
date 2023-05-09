@@ -20,4 +20,14 @@ public class SearchData {
                 {"Paulina Cocina"},
         };
     }
+
+    @DataProvider(name = "searchKeywordsWithSpecialCharacters")
+    public static Object[][] createSearchKeywordsWithSpecialCharacters() {
+        return new Object[][] {
+                {"@shirt$"},
+                {"&pant^"},
+                {"*shoes("},
+        };
+    }
+
 }
