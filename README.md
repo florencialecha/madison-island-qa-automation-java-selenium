@@ -57,7 +57,6 @@ After running the tests, view the Allure reports generated to analyze the test r
 ## 📃 Test Scenarios
 - **Search for Available Clothing Items:** This test verifies that users can easily search for and find the products they want using various search criteria, filters, and navigation through product categories.
 - **Filtered Search Test:** This test ensures that users can apply different combinations of filters to search results (e.g., price range, color, size) and obtain results that match both the search keyword and the applied filter.
-- **Category Navigation Test:** This test checks that users can navigate through product categories and subcategories from the menu, displaying the products within the selected category and subcategory.
 -  **No Results Search Test:** This test serves as a negative test case, verifying that the search functionality returns no results and displays an appropriate message when the user inputs an invalid or non-existent search keyword.
 - **Product Details from Search Test:** This test ensures that users can access product details from search results, displaying relevant information such as product images, description, price, and available sizes/colors.
 
@@ -70,6 +69,7 @@ The criteria for choosing these test scenarios were based on the following facto
 - Frequent execution requirement, which reduces costs associated with manual testing.
 
 By focusing on these test cases, the testing suite ensures that users can effectively navigate the store's catalog, find desired products, and access relevant product information. Additionally, these tests help to verify the robustness and reliability of the search functionality. Automating these tests, which need to be executed frequently, reduces the time and resources spent on manual testing, leading to more efficient testing processes and cost savings.
+Test Cases: https://docs.google.com/spreadsheets/d/1Ar-mBKZa_ANOgNw-iFRsttCOSc7ret6GbcdpJ8nrZ_4/edit?usp=sharing
 
 ## 👩‍💻 About the Developer
 Hi, I'm [Florencia](https://www.linkedin.com/in/florencialecha/), the developer of this project. I'm a software engineer with a strong focus on test automation and quality assurance. My passion lies in creating clean, maintainable, and efficient test suites that ensure the reliability and performance of software systems. I continuously strive to enhance my skills and deliver high-quality solutions that meet both business and user needs.
