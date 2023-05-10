@@ -1,5 +1,6 @@
 package com.onlineclothingstore.pages;
 
+import com.onlineclothingstore.utils.BasePage;
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -12,8 +13,8 @@ import java.time.Duration;
 import java.util.List;
 import java.util.Random;
 
-public class CatalogSearchPage {
-    private static WebDriver driver;
+public class CatalogSearchPage extends BasePage {
+
     @FindBy(css = ".products-grid .product-name")
     private List<WebElement> searchResultsItems;
     @FindBy(css = "#narrow-by-list li a")
@@ -28,8 +29,7 @@ public class CatalogSearchPage {
     private WebElement SearchBreadcrumb;
 
     public CatalogSearchPage(WebDriver driver) {
-        CatalogSearchPage.driver = driver;
-        PageFactory.initElements(driver, this);
+        super(driver);
     }
 
     @Step("Get the number of search results")

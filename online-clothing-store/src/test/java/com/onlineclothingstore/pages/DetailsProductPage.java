@@ -1,17 +1,16 @@
 package com.onlineclothingstore.pages;
 
+import com.onlineclothingstore.utils.BasePage;
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class DetailsProductPage {
-    private static WebDriver driver;
+public class DetailsProductPage extends BasePage {
     private final String selectedProductName;
     @FindBy(css = ".product-name .h1")
     private WebElement productName;
@@ -19,8 +18,7 @@ public class DetailsProductPage {
     private WebElement searchBreadcrumb;
 
     public DetailsProductPage(WebDriver driver, String selectedProductName) {
-        DetailsProductPage.driver = driver;
-        PageFactory.initElements(driver, this);
+        super(driver);
         this.selectedProductName = selectedProductName;
     }
 
