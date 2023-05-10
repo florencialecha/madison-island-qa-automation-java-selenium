@@ -50,7 +50,7 @@ Feel free to explore the repository to gain a deeper understanding of the test a
 ## 🚀 Usage
 - Build the project using Maven: `mvn clean install`
 - Run the test suite: `mvn test`
-- Generate Allure reports: `mvn allure:serve`
+- Generate Allure reports: `allure serve allure-results`
 
 ## 📊 Allure Reports
 After running the tests, view the Allure reports generated to analyze the test results and identify any issues or improvements needed.
