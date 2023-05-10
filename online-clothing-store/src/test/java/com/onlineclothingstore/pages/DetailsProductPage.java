@@ -24,7 +24,6 @@ public class DetailsProductPage extends BasePage {
 
     @Step("Get product name")
     public String getProductName() {
-        System.out.println("Product name: " + productName.getText());
         return productName.getText();
     }
 

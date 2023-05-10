@@ -36,7 +36,6 @@ public class ShouldReturnResultsWhenSearchTermMatchesTest {
         HeaderPage headerPage = new HeaderPage(driver);
         CatalogSearchPage catalogSearchPage = headerPage.searchFor(keyword);
         int numberOfResults = catalogSearchPage.getNumberOfResults();
-        System.out.println("Number of results: " + numberOfResults);
         Assert.assertTrue(numberOfResults > 0, "No results found");
 
         String expectedSearchTitle = "SEARCH RESULTS FOR '" + keyword.toUpperCase() + "'";

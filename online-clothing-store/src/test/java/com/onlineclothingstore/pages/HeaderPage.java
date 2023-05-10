@@ -1,21 +1,19 @@
 package com.onlineclothingstore.pages;
 
+import com.onlineclothingstore.utils.BasePage;
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
 import static org.openqa.selenium.Keys.ENTER;
-public class HeaderPage {
-    private static WebDriver driver;
-    //todo: check if selector name = q is better, it's more specific but less readable
+public class HeaderPage extends BasePage {
+
     @FindBy(css = "#search_mini_form input")
     private WebElement searchBar;
 
     public HeaderPage(WebDriver driver) {
-        HeaderPage.driver = driver;
-        PageFactory.initElements(driver, this);
+        super(driver);
     }
 
     @Step("Search for product with keyword: {keyword}")

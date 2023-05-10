@@ -36,7 +36,6 @@ public class ShouldHandleSpecialCharactersInSearchTermTest {
         HeaderPage headerPage = new HeaderPage(driver);
         CatalogSearchPage catalogSearchPage = headerPage.searchFor(keyword);
         int numberOfResults = catalogSearchPage.getNumberOfResults();
-        System.out.println("Number of results: " + numberOfResults);
 
         String expectedSearchTitle = "SEARCH RESULTS FOR '" + keyword.toUpperCase() + "'";
         String actualSearchTitle = catalogSearchPage.getSearchTitle();

@@ -36,7 +36,6 @@ public class ShouldReturnNoResultsWhenSearchTermNotFoundTest {
         HeaderPage headerPage = new HeaderPage(driver);
         CatalogSearchPage catalogSearchPage = headerPage.searchFor(keyword);
         int numberOfResults = catalogSearchPage.getNumberOfResults();
-        System.out.println("Number of results: " + numberOfResults);
         Assert.assertEquals(numberOfResults, 0, "Search should return no results");
 
         String expectedSearchTitle = "SEARCH RESULTS FOR '" + keyword.toUpperCase() + "'";

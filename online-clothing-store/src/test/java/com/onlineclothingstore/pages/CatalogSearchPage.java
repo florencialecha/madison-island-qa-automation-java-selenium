@@ -5,7 +5,6 @@ import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -38,15 +37,12 @@ public class CatalogSearchPage extends BasePage {
     }
 
     @Step("Apply filter '{filter}'")
-    public CatalogSearchPage applyFilter(String filter) {
+    public void applyFilter(String filter) {
         WebElement filterElement = findFilterElementByText(filter);
         if (filterElement != null) {
             filterElement.click();
-            System.out.println("Filter '" + filter + "' applied");
-        } else {
-            System.out.println("Filter '" + filter + " not found in the list of filters");
         }
-        return new CatalogSearchPage(driver);
+        new CatalogSearchPage(driver);
     }
 
     @Step("Find filter element by text '{filterText}'")
@@ -66,7 +62,6 @@ public class CatalogSearchPage extends BasePage {
 
     @Step("Check if filter '{filter}' is applied")
     public boolean isFilterApplied(String filter) {
-        System.out.println("Filter to check: " + filter);
         for (WebElement currentFilter : currentFilters) {
             if (currentFilter.getText().contains(filter)) {
                 return true;
@@ -96,7 +91,6 @@ public class CatalogSearchPage extends BasePage {
         int randomIndex = random.nextInt(searchResultsItems.size());
         WebElement randomProduct = searchResultsItems.get(randomIndex);
         String selectedProductName = randomProduct.getText();
-        System.out.println("Selected product: " + selectedProductName);
         randomProduct.click();
         return new DetailsProductPage(driver, selectedProductName);
     }
