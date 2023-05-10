@@ -1,6 +1,6 @@
 package com.onlineclothingstore.pages;
 
-import com.onlineclothingstore.utils.BasePage;
+import com.onlineclothingstore.dataProviders.BasePage;
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

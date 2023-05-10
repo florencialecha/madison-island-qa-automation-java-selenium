@@ -1,4 +1,4 @@
-package com.onlineclothingstore.utils;
+package com.onlineclothingstore.dataProviders;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
