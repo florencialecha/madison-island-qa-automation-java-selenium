@@ -1,5 +1,6 @@
 package com.onlineclothingstore.pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -31,14 +32,14 @@ public class CatalogSearchPage {
         PageFactory.initElements(driver, this);
     }
 
+    @Step("Get the number of search results")
     public int getNumberOfResults() {
         return searchResultsItems.size();
     }
 
+    @Step("Apply filter '{filter}'")
     public CatalogSearchPage applyFilter(String filter) {
-        // 1 - find the filter on the filterOptions list
         WebElement filterElement = findFilterElementByText(filter);
-        // 2 - click on the filter
         if (filterElement != null) {
             filterElement.click();
             System.out.println("Filter '" + filter + "' applied");
@@ -48,6 +49,7 @@ public class CatalogSearchPage {
         return new CatalogSearchPage(driver);
     }
 
+    @Step("Find filter element by text '{filterText}'")
     private WebElement findFilterElementByText(String filterText) {
         for (WebElement filterOption : filterOptions) {
             if (filterOption.getText().contains(filterText)) {
@@ -57,10 +59,12 @@ public class CatalogSearchPage {
         return null;
     }
 
+    @Step("Get the number of filtered results")
     public int getNumberOfFilteredResults() {
         return searchResultsItems.size();
     }
 
+    @Step("Check if filter '{filter}' is applied")
     public boolean isFilterApplied(String filter) {
         System.out.println("Filter to check: " + filter);
         for (WebElement currentFilter : currentFilters) {
@@ -71,18 +75,22 @@ public class CatalogSearchPage {
         return false;
     }
 
+    @Step("Get the no results message")
     public String getNoResultsMessage() {
         return noResultsMessage.getText();
     }
 
+    @Step("Get the search title")
     public String getSearchTitle() {
         return pageTitle.getText();
     }
 
+    @Step("Get the search breadcrumb")
     public String getSearchBreadcrumb() {
         return SearchBreadcrumb.getText();
     }
 
+    @Step("Click on random product")
     public DetailsProductPage clickOnProductRandom() {
         Random random = new Random();
         int randomIndex = random.nextInt(searchResultsItems.size());
@@ -93,9 +101,11 @@ public class CatalogSearchPage {
         return new DetailsProductPage(driver, selectedProductName);
     }
 
+    @Step("Wait for search results")
     public void waitForSearchResults() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
         wait.until(ExpectedConditions.visibilityOfAllElements(searchResultsItems));
     }
+
 }
 

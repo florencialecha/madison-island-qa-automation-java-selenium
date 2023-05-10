@@ -4,12 +4,18 @@ import com.onlineclothingstore.dataProviders.SearchData;
 import com.onlineclothingstore.pages.CatalogSearchPage;
 import com.onlineclothingstore.pages.HeaderPage;
 import com.onlineclothingstore.scripts.utils.BaseTest;
+import io.qameta.allure.Description;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Story;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 public class ShouldHandleSpecialCharactersInSearchTermTest extends BaseTest {
 
+    @Feature("Search Product Functionality")
+    @Story("Handle special characters in search term")
+    @Description("When a user searches for a product using special characters, the search results should be displayed correctly.")
     @Test(groups = "search", dataProvider = "searchKeywordsWithSpecialCharacters", dataProviderClass = SearchData.class)
     public void handle(String keyword) {
 
@@ -34,5 +40,6 @@ public class ShouldHandleSpecialCharactersInSearchTermTest extends BaseTest {
             String actualNoResultsMessage = catalogSearchPage.getNoResultsMessage();
             Assert.assertEquals(actualNoResultsMessage, expectedNoResultsMessage, "The no results message should be displayed");
         }
+
     }
 }

@@ -4,15 +4,21 @@ import com.onlineclothingstore.dataProviders.SearchData;
 import com.onlineclothingstore.pages.HeaderPage;
 import com.onlineclothingstore.pages.CatalogSearchPage;
 import com.onlineclothingstore.scripts.utils.BaseTest;
+import io.qameta.allure.Description;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Story;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class ShouldFilterSearchResultsTest extends BaseTest {
 
+    @Feature("Filter Search Results Functionality")
+    @Story("Filter search results by criteria")
+    @Description("When a user searches for a product and applies a filter, the results should be filtered correctly.")
     @Test(dataProvider = "searchKeywordsAndFilters", dataProviderClass = SearchData.class)
     public void handle(String keyword,  String filter) {
 
-        // improve: if succefullKeywordSearchTest is true => check if filterSearchTest works
         driver.get("http://magento-demo.lexiconn.com");
         HeaderPage headerPage = new HeaderPage(driver);
 
@@ -21,7 +27,7 @@ public class ShouldFilterSearchResultsTest extends BaseTest {
         int countSearchForKeywordResults = catalogSearchPage.getNumberOfResults();
         System.out.println("Number of results for keyword search: " + countSearchForKeywordResults);
 
-        // Apply the provided filter and get the number of filtered results
+        // If results are found, apply the provided filter
         if (countSearchForKeywordResults > 0) {
 
             System.out.println("Applying filter: " + filter + "...");

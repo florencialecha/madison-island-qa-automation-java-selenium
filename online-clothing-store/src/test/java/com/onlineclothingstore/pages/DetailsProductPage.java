@@ -1,5 +1,6 @@
 package com.onlineclothingstore.pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -14,7 +15,6 @@ public class DetailsProductPage {
     private final String selectedProductName;
     @FindBy(css = ".product-name .h1")
     private WebElement productName;
-
     @FindBy(css = ".breadcrumbs .product")
     private WebElement searchBreadcrumb;
 
@@ -24,22 +24,26 @@ public class DetailsProductPage {
         this.selectedProductName = selectedProductName;
     }
 
+    @Step("Get product name")
     public String getProductName() {
-            System.out.println("Product name: " + productName.getText());
-            return productName.getText();
+        System.out.println("Product name: " + productName.getText());
+        return productName.getText();
     }
 
+    @Step("Get search breadcrumb")
     public String getSearchBreadcrumb() {
-            return searchBreadcrumb.getText();
+        return searchBreadcrumb.getText();
     }
 
+    @Step("Wait for page title")
     public String getSelectedProductName() {
-            return selectedProductName;
+        return selectedProductName;
     }
 
+    @Step("Wait for page title to be displayed")
     public void waitForPageTitle() {
-        // wait for the page title to be displayed
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
         wait.until(ExpectedConditions.visibilityOf(productName));
     }
+
 }

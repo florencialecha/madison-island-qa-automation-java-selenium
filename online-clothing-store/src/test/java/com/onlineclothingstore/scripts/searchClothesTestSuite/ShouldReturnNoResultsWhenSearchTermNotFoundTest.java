@@ -4,10 +4,17 @@ import com.onlineclothingstore.dataProviders.SearchData;
 import com.onlineclothingstore.pages.CatalogSearchPage;
 import com.onlineclothingstore.pages.HeaderPage;
 import com.onlineclothingstore.scripts.utils.BaseTest;
+import io.qameta.allure.Description;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Story;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class ShouldReturnNoResultsWhenSearchTermNotFoundTest extends BaseTest {
+
+    @Feature("Search Product Functionality")
+    @Story("Search for a product that doesn't exist")
+    @Description("When a user searches for a product that doesn't exist, the search should return no results.")
     @Test(groups = "search", dataProvider = "searchKeywordsWithNoResults", dataProviderClass = SearchData.class)
     public void handle(String keyword) {
 
@@ -29,5 +36,6 @@ public class ShouldReturnNoResultsWhenSearchTermNotFoundTest extends BaseTest {
         String expectedNoResultsMessage = "Your search returns no results.";
         String actualNoResultsMessage = catalogSearchPage.getNoResultsMessage();
         Assert.assertEquals(actualNoResultsMessage, expectedNoResultsMessage, "The no results message should be displayed");
+
     }
 }

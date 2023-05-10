@@ -5,11 +5,15 @@ import com.onlineclothingstore.pages.CatalogSearchPage;
 import com.onlineclothingstore.pages.DetailsProductPage;
 import com.onlineclothingstore.pages.HeaderPage;
 import com.onlineclothingstore.scripts.utils.BaseTest;
+import io.qameta.allure.*;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class ShouldDisplayProductDetailsFromSearchResultsTest extends BaseTest {
 
+    @Feature("Product Details Display")
+    @Story("Display product details from search results")
+    @Description("When a user searches for a product and selects one from the search results, the details of the product should be displayed correctly.")
     @Test(dataProvider = "searchKeywordsAndFilters", dataProviderClass = SearchData.class)
     public void handle(String keyword, String filter) {
 
