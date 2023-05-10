@@ -13,7 +13,7 @@ The Final Test Automation is a project for the software test automation course, 
 - [🚀 Usage](https://github.com/florencialecha/madison-island-qa-automation-java-selenium/blob/main/README.md#-usage)
 - [📊 Allure Reports](https://github.com/florencialecha/madison-island-qa-automation-java-selenium/blob/main/README.md#-allure-reports)
 - [📃 Test Scenarios](https://github.com/florencialecha/madison-island-qa-automation-java-selenium/blob/main/README.md#-test-scenarios)
-- [🛠️ Next Steps]()
+- [🛠️ Next Steps](https://github.com/florencialecha/madison-island-qa-automation-java-selenium/tree/main#%EF%B8%8F-next-steps)
 - [👩‍💻 About the Developer](https://github.com/florencialecha/madison-island-qa-automation-java-selenium/blob/main/README.md#-about-the-developer)
 
 ## 🧠 Mindmap Overview
@@ -70,7 +70,7 @@ The criteria for choosing these test scenarios were based on the following facto
 - Frequent execution requirement, which reduces costs associated with manual testing.
 
 By focusing on these test cases, the testing suite ensures that users can effectively navigate the store's catalog, find desired products, and access relevant product information. Additionally, these tests help to verify the robustness and reliability of the search functionality. Automating these tests, which need to be executed frequently, reduces the time and resources spent on manual testing, leading to more efficient testing processes and cost savings.
-[Test Cases] (https://docs.google.com/spreadsheets/d/1Ar-mBKZa_ANOgNw-iFRsttCOSc7ret6GbcdpJ8nrZ_4/edit?usp=sharing)
+[Test Cases Design](https://docs.google.com/spreadsheets/d/1Ar-mBKZa_ANOgNw-iFRsttCOSc7ret6GbcdpJ8nrZ_4/edit?usp=sharing)
 
 ## 🛠️ Next Steps
 - Refactor duplicated test methods such as opening the home page, product search, page title checking, and page path checking.
